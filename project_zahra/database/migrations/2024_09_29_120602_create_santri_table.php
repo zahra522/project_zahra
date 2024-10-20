@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('nama', 20);
             $table->string('tempat_tanggal_lahir', 100);
             $table->string('alamat', 30);
-            $table->string('pendidikan_terakhir', 10);
             $table->string('nama_ayah', 50);
             $table->string('nama_ibu', 50);
 
