@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('santri', function (Blueprint $table) {
-            $table->id('nik',100);
-            $table->string('nama', 20);
-            $table->string('tempat_tanggal_lahir', 100);
-            $table->string('alamat', 30);
-            $table->string('nama_ayah', 50);
-            $table->string('nama_ibu', 50);
-
+        Schema::create('nns', function (Blueprint $table) {
+            $table->bigIncrements('id'); // Kolom "id" sebagai primary key dengan auto-increment
             $table->timestamps();
+            $table->softDeletes();
+            $table->text('name');
+            $table->text('code');
         });
     }
 
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('santri');
+        Schema::dropIfExists('nns');
     }
 };
